@@ -3,12 +3,21 @@ import { useCallback } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
-
+import { TailwindProvider } from 'tailwindcss-react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import OnboardingScreen from './screens/OnboardingScreen';
 
 export default function App() {
-    const [fontsLoaded] = useFonts({
 
-        "clash": require('./assets/fonts/ClashGrotesk-Regular.otf')
+    SplashScreen.preventAutoHideAsync();
+    const Stack = createNativeStackNavigator();
+
+    const [fontsLoaded] = useFonts({
+        'clash': require('./assets/fonts/ClashGrotesk-Regular.otf'),
+        'clash-medium': require('./assets/fonts/ClashGrotesk-Medium.otf'),
+        'clash-semibold': require('./assets/fonts/ClashGrotesk-Semibold.otf'),
+        'clash-bold': require('./assets/fonts/ClashGrotesk-Bold.otf'),
     });
 
     const onLayoutRootView = useCallback(async () => {
@@ -22,17 +31,17 @@ export default function App() {
     }
 
     return (
-        <View
-            className=" flex-1 justify-center items-center"
-            onLayout={onLayoutRootView}
-        >
-            <Text className="font-[clash] text-xl text-dark">
-              Interface 1234567890
-            </Text>
-            <Text className="text-lg text-primary300 ">
-                Interface 1234567890
-            </Text>
-            <StatusBar style="auto" />
+        <View className=" flex-1" onLayout={onLayoutRootView}>
+            <TailwindProvider>
+                <NavigationContainer>
+                    <Stack.Navigator screenOptions={{headerShown: false}}>
+                        <Stack.Screen
+                            name="Onboarding"
+                            component={OnboardingScreen}
+                        />
+                    </Stack.Navigator>
+                </NavigationContainer>
+            </TailwindProvider>
         </View>
     );
 }
