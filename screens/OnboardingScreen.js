@@ -96,7 +96,7 @@ const OnboardingScreen = ({ navigation }) => {
                 onMomentumScrollEnd={updateCurrentSlideIndex}
                 pagingEnabled // this props help the onbaord screen snap
                 data={slides}
-                contentContainerStyle={{ height: height * 0.65 }}
+                contentContainerStyle={{ height: height * 0.60 }}
                 showsHorizontalScrollIndicator={false}
                 showsVerticalScrollIndicator={false}
                 horizontal
