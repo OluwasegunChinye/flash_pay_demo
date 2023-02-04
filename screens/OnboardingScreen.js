@@ -5,11 +5,14 @@ import {
     FlatList,
     Dimensions,
     Image,
-    StyleSheet,
+    Animated,
+    TouchableOpacity,
 } from 'react-native';
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import Pagination from '../components/Pagination';
+import Btn from '../components/Btn';
 
-const { height, width } = Dimensions.get('window');
+const { width } = Dimensions.get('screen');
 
 const slides = [
     {
@@ -39,7 +42,7 @@ const Slide = ({ item }) => {
         <View className="justify-center items-center">
             <Image
                 source={item.image}
-                style={{ height: '60%', width, resizeMode: 'contain' }}
+                style={{ height: '70%', width, resizeMode: 'contain' }}
             />
             <Text className="font-[clash-medium] text-xl text-dark my-3">
                 {item.title}
@@ -56,66 +59,83 @@ const Slide = ({ item }) => {
 
 const OnboardingScreen = ({ navigation }) => {
     const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+    const scrollX = useRef(new Animated.Value(0)).current;
 
-    const Footer = () => {
-        return (
-            <View
-                style={{
-                    // height: height * 0.25,
-                    justifyContent: 'space-between',
-                    paddingHorizontal: 20,
-                }}
-            >
-                <View className="flex-row justify-center mt-5">
-                    {slides.map((_, index) => (
-                        <View
-                            key={index}
-                            style={[
-                                styles.indicator,
-                                currentSlideIndex == index && {
-                                    backgroundColor: '#160093',
-                                    width: 20,
-                                },
-                            ]}
-                        />
-                    ))}
-                </View>
-            </View>
-        );
+    const handleOnScroll = (e) => {
+        Animated.event(
+            [
+                {
+                    nativeEvent: {
+                        contentOffset: {
+                            x: scrollX,
+                        },
+                    },
+                },
+            ],
+            {
+                useNativeDriver: false,
+            }
+        )(e);
     };
 
-    const updateCurrentSlideIndex = (e) => {
-        const contentOffsetX = e.nativeEvent.contentOffset.x;
-        const currentIndex = Math.round(contentOffsetX / width);
-        setCurrentSlideIndex(currentIndex);
-    };
+    //  ANOTHER WAY TO GET INDEX OF CURRENT SLIDE 👇🏼
+    // const updateCurrentSlideIndex = (e) => {
+    //     const contentOffsetX = e.nativeEvent.contentOffset.x;
+    //     const currentIndex = Math.round(contentOffsetX / width);
+    //     setCurrentSlideIndex(currentIndex);
+    // };
 
+    const handleOnViewableItemsChanged = useRef(({ viewableItems }) => {
+        setCurrentSlideIndex(viewableItems[0].index);
+    }).current;
+
+    const viewabilityConfig = useRef({
+        itemVisiblePercentThreshold: 50,
+    }).current;
+
+    // const Footer = () => {
+    //     return (
+    //         <View className="h-1/3">
+    //             <Text>I am the footer area</Text>
+    //         </View>
+    //     );
+    // };
+    
     return (
-        <SafeAreaView className="flex-1 bg-white justify-center">
+        <SafeAreaView className="flex-1 bg-white justify-center h-2/3">
             <FlatList
-                onMomentumScrollEnd={updateCurrentSlideIndex}
-                pagingEnabled // this props help the onbaord screen snap
+                onScroll={handleOnScroll}
+                pagingEnabled // 👈🏽 this props help the onbaord screen snap
                 data={slides}
-                contentContainerStyle={{ height: height * 0.60 }}
                 showsHorizontalScrollIndicator={false}
-                showsVerticalScrollIndicator={false}
+                bounces={false} // 👈🏽 image bouncing prevented
+                snapToAlignment="center" // 👈🏽 image snaps to center when scrolled
                 horizontal
                 keyExtractor={(item) => item.id}
                 renderItem={({ item }) => <Slide item={item} />}
+                onViewableItemsChanged={handleOnViewableItemsChanged}
+                viewabilityConfig={viewabilityConfig}
             />
-            <Footer />
+            <Pagination
+                data={slides}
+                scrollX={scrollX}
+                currentSlideIndex={currentSlideIndex}
+            />
+            <View className="h-1/3 justify-center items-center">
+                <Btn title="Sign Up" onPress={() => navigation.replace('Signup')} />
+                <View className="flex-row justify-center mt-4">
+                    <Text className="font-[clash]">
+                        Already have an account?
+                    </Text>
+                    <TouchableOpacity onPress={() => navigation.replace('Login')}>
+                        <Text className="font-[clash] text-primary300 ml-2">
+                            Login
+                        </Text>
+                    </TouchableOpacity>
+                </View>
+            </View>
         </SafeAreaView>
     );
 };
 
 export default OnboardingScreen;
-
-const styles = StyleSheet.create({
-    indicator: {
-        height: 10,
-        width: 10,
-        backgroundColor: '#9CA3AF',
-        marginHorizontal: 3,
-        borderRadius: '50%',
-    },
-});
