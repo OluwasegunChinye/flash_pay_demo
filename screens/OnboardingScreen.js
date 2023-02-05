@@ -93,13 +93,7 @@ const OnboardingScreen = ({ navigation }) => {
         itemVisiblePercentThreshold: 50,
     }).current;
 
-    // const Footer = () => {
-    //     return (
-    //         <View className="h-1/3">
-    //             <Text>I am the footer area</Text>
-    //         </View>
-    //     );
-    // };
+   
     
     return (
         <SafeAreaView className="flex-1 bg-white justify-center h-2/3">
@@ -124,7 +118,7 @@ const OnboardingScreen = ({ navigation }) => {
             <View className="h-1/3 justify-center items-center">
                 <Btn title="Sign Up" onPress={() => navigation.replace('Signup')} />
                 <View className="flex-row justify-center mt-4">
-                    <Text className="font-[clash]">
+                    <Text className="font-[clash] text-dark">
                         Already have an account?
                     </Text>
                     <TouchableOpacity onPress={() => navigation.replace('Login')}>
