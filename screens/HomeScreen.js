@@ -1,7 +1,15 @@
-import { View, Text, Dimensions, SafeAreaView, Image } from 'react-native';
+import {
+    View,
+    Text,
+    Dimensions,
+    SafeAreaView,
+    Image,
+    FlatList,
+} from 'react-native';
 import React from 'react';
 import Icons from '../components/Icons';
 import TransactionCard from '../components/TransactionCard';
+import { DATA } from '../data/TransactionData';
 
 const { height, width } = Dimensions.get('screen');
 
@@ -107,7 +115,7 @@ const HomeScreen = () => {
                         </Text>
                     </View>
                 </View>
-                <View className="flex-row h-24 bg-primary100 mt-4 items-center rounded-lg">
+                <View className="flex-row h-24 bg-primary100 mt-6 items-center rounded-lg">
                     <View className="p-3">
                         <Image
                             className="h-16 w-16"
@@ -126,7 +134,7 @@ const HomeScreen = () => {
                         </Text>
                     </View>
                 </View>
-                <View className="flex-row justify-between mt-6">
+                <View className="flex-row justify-between mt-8 mb-2">
                     <Text className="font-[clash-medium] text-md text-dark">
                         Recent Transactions
                     </Text>
@@ -135,7 +143,18 @@ const HomeScreen = () => {
                     </Text>
                 </View>
 
-                <TransactionCard />
+                <FlatList
+                    data={DATA}
+                    keyExtractor={(item) => item.id}
+                    renderItem={({ item }) => (
+                        <TransactionCard
+                            name={item.name}
+                            date={item.date}
+                            amount={item.amount}
+                            status={item.status}
+                        />
+                    )}
+                />
             </View>
         </SafeAreaView>
     );
