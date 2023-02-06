@@ -18,6 +18,7 @@ module.exports = {
             gray: '#9CA3AF',
             success: '#22C55E',
             white: '#FFFFFF',
+            danger: '#f80202',
         },
     },
     plugins: [],

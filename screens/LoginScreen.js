@@ -9,20 +9,20 @@ import React from 'react';
 
 import InputApp from '../components/InputApp';
 import Btn from '../components/Btn';
-import FingerPrint from '../components/FingerPrint';
+import Icons from '../components/Icons';
 
 const { height, width } = Dimensions.get('screen');
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation }) => {
     return (
-        <SafeAreaView>
+        <SafeAreaView className="flex-1  bg-white">
             <View style={{ margin: width * 0.08 }}>
                 <View className="mt-20">
                     <Text className="font-[clash-medium] text-xl mb-2 text-dark">
                         Login
                     </Text>
                     <Text className="font-[clash] text-dark">
-                        Sign up to your account and enjoy the best{' '}
+                        Sign up to your account and enjoy the best
                     </Text>
                     <Text className="font-[clash] text-dark">
                         banking experience
@@ -37,11 +37,13 @@ const LoginScreen = () => {
                 </View>
             </View>
             <View className=" items-center mt-5">
-                <Btn title="Sign Up" />
+                <Btn title="Login" onPress={() => navigation.replace('Home')} />
             </View>
 
             <View className="mt-6 ml-10">
-                <Text className="font-[clash-medium] text-dark">Forgot password</Text>
+                <Text className="font-[clash-medium] text-dark">
+                    Forgot password
+                </Text>
                 <View className="flex-row mt-1">
                     <Text className="font-[clash] text-dark">
                         Dont have an account?
@@ -54,7 +56,7 @@ const LoginScreen = () => {
                 </View>
             </View>
             <View className="items-center mt-14">
-                <FingerPrint name="finger-print" color="#160093" size={100} />
+                <Icons name="finger-print" color="#160093" size={100} />
             </View>
             <View className="items-center">
                 <Text className="text-[clash] text-dark mt-10">

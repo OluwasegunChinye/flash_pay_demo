@@ -3,13 +3,13 @@ import React from 'react';
 
 import InputApp from '../components/InputApp';
 import Btn from '../components/Btn';
-import FingerPrint from '../components/FingerPrint';
+import Icons from '../components/Icons';
 
 const { height, width } = Dimensions.get('screen');
 
-const SignupScreen = () => {
+const SignupScreen = ({ navigation }) => {
     return (
-        <SafeAreaView className="">
+        <SafeAreaView className="flex-1  bg-white">
             <View style={{ margin: width * 0.08 }}>
                 <View className="mt-20">
                     <Text className="font-[clash-medium] text-xl mb-2 text-dark">
@@ -36,13 +36,18 @@ const SignupScreen = () => {
                 </View>
             </View>
             <View className=" items-center mt-5">
-                <Btn title="Sign Up" />
+                <Btn
+                    title="Sign Up"
+                    onPress={() => navigation.replace('Home')}
+                />
             </View>
             <View className="items-center mt-10">
-                <FingerPrint name="finger-print" color="#160093" size={100} />
+                <Icons name="finger-print" color="#160093" size={100} />
             </View>
-            <View className='items-center'>
-              <Text className='text-[clash] text-dark mt-10'>Add Fingerprint</Text>
+            <View className="items-center">
+                <Text className="text-[clash] text-dark mt-10">
+                    Add Fingerprint
+                </Text>
             </View>
         </SafeAreaView>
     );
