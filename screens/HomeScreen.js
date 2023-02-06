@@ -1,6 +1,7 @@
 import { View, Text, Dimensions, SafeAreaView, Image } from 'react-native';
 import React from 'react';
 import Icons from '../components/Icons';
+import TransactionCard from '../components/TransactionCard';
 
 const { height, width } = Dimensions.get('screen');
 
@@ -62,7 +63,7 @@ const HomeScreen = () => {
                     </View>
                     <View
                         style={{ width: width / 5 }}
-                        className=" border border-dashed h-24 border-primary300 justify-center items-center rounded-lg"
+                        className=" border h-24 border-gray justify-center items-center rounded-lg"
                     >
                         <View className=" h-14 w-14 bg-primary100 rounded-full items-center justify-center my-1">
                             <Icons
@@ -77,7 +78,7 @@ const HomeScreen = () => {
                     </View>
                     <View
                         style={{ width: width / 5 }}
-                        className=" border border-dashed h-24 border-primary300 justify-center items-center rounded-lg"
+                        className=" border h-24 border-gray justify-center items-center rounded-lg"
                     >
                         <View className=" h-14 w-14 bg-primary100 rounded-full items-center justify-center my-1">
                             <Icons
@@ -92,7 +93,7 @@ const HomeScreen = () => {
                     </View>
                     <View
                         style={{ width: width / 5 }}
-                        className=" border border-dashed h-24 border-primary300 justify-center items-center rounded-lg"
+                        className=" border h-24 border-gray justify-center items-center rounded-lg"
                     >
                         <View className=" h-14 w-14 bg-primary100 rounded-full items-center justify-center my-1">
                             <Icons
@@ -133,6 +134,8 @@ const HomeScreen = () => {
                         See all
                     </Text>
                 </View>
+
+                <TransactionCard />
             </View>
         </SafeAreaView>
     );
