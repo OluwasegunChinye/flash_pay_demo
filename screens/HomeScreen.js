@@ -6,16 +6,33 @@ import {
     Image,
     FlatList,
 } from 'react-native';
-import React from 'react';
+import React, { useState } from 'react';
+import Modal from 'react-native-modal';
+
 import Icons from '../components/Icons';
 import TransactionCard from '../components/TransactionCard';
 import { DATA } from '../data/TransactionData';
+import ModalApp from '../components/ModalApp';
 
 const { height, width } = Dimensions.get('screen');
 
 const HomeScreen = () => {
+    const [isModalVisible, setModalVisible] = useState(false);
+    const toggleModal = () => {
+        setModalVisible(!isModalVisible);
+    };
+
     return (
         <SafeAreaView className="flex-1  bg-white">
+            <View>
+                <Modal
+                    isVisible={isModalVisible}
+                    onBackdropPress={() => setModalVisible(false)}
+                >
+                    <ModalApp onPress={toggleModal} />
+                </Modal>
+            </View>
+
             <View style={{ margin: width * 0.08 }}>
                 <View className="flex-row space-x-56 mt-4">
                     <View>
@@ -152,6 +169,7 @@ const HomeScreen = () => {
                             date={item.date}
                             amount={item.amount}
                             status={item.status}
+                            onPress={toggleModal}
                         />
                     )}
                 />
