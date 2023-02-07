@@ -8,7 +8,7 @@ export const DATA = [
   },
   {
     id: '2',
-    name : 'Reakwon cuban',
+    name : 'Reakwon',
     date: '22-01-2023',
     amount: '+N40,000',
     status: 'success'
@@ -22,7 +22,7 @@ export const DATA = [
   },
   {
     id: '4',
-    name : 'Tony Starks',
+    name : 'GZA',
     date: '22-01-2023',
     amount: '+N70,000',
     status: 'success'

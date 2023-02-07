@@ -34,7 +34,7 @@ const HomeScreen = () => {
             </View>
 
             <View style={{ margin: width * 0.08 }}>
-                <View className="flex-row space-x-56 mt-4">
+                <View className="flex-row space-x-56 mt-2">
                     <View>
                         <Text className="font-[clash] text-dark text-xs">
                             Tuesday 22, JAN
@@ -54,7 +54,7 @@ const HomeScreen = () => {
                         </View>
                     </View>
                 </View>
-                <View className="w-full h-44 bg-primary400  rounded-xl mt-4 px-6 pt-4">
+                <View className="w-full h-44 bg-primary400  rounded-xl mt-2 px-6 pt-4">
                     <Text className="font-[clash] text-lg text-white mb-2">
                         Chuckwu Justice
                     </Text>
@@ -67,18 +67,18 @@ const HomeScreen = () => {
                     </Text>
                 </View>
 
-                <Text className="mt-6 font-[clash-medium] text-dark">
+                <Text className="mt-4 font-[clash-medium] text-dark">
                     Choose an action
                 </Text>
                 <View className="flex-row mt-3 space-x-2">
                     <View
                         style={{ width: width / 5 }}
-                        className=" border border-dashed h-24 border-primary300 justify-center items-center rounded-lg"
+                        className=" border border-dashed h-20 border-primary300 justify-center items-center rounded-lg"
                     >
-                        <View className=" h-14 w-14 bg-primary100 rounded-full items-center justify-center my-1">
+                        <View className=" h-10 w-10 bg-primary100 rounded-full items-center justify-center my-1">
                             <Icons
                                 name="ios-paper-plane"
-                                size={23}
+                                size={20}
                                 color="#160093"
                             />
                         </View>
@@ -88,12 +88,12 @@ const HomeScreen = () => {
                     </View>
                     <View
                         style={{ width: width / 5 }}
-                        className=" border h-24 border-gray justify-center items-center rounded-lg"
+                        className=" border h-20 border-gray justify-center items-center rounded-lg"
                     >
-                        <View className=" h-14 w-14 bg-primary100 rounded-full items-center justify-center my-1">
+                        <View className=" h-10 w-10 bg-primary100 rounded-full items-center justify-center my-1">
                             <Icons
                                 name="ios-receipt-outline"
-                                size={23}
+                                size={20}
                                 color="#160093"
                             />
                         </View>
@@ -103,12 +103,12 @@ const HomeScreen = () => {
                     </View>
                     <View
                         style={{ width: width / 5 }}
-                        className=" border h-24 border-gray justify-center items-center rounded-lg"
+                        className=" border h-20 border-gray justify-center items-center rounded-lg"
                     >
-                        <View className=" h-14 w-14 bg-primary100 rounded-full items-center justify-center my-1">
+                        <View className=" h-10 w-10 bg-primary100 rounded-full items-center justify-center my-1">
                             <Icons
                                 name="phone-portrait-outline"
-                                size={23}
+                                size={20}
                                 color="#160093"
                             />
                         </View>
@@ -118,12 +118,12 @@ const HomeScreen = () => {
                     </View>
                     <View
                         style={{ width: width / 5 }}
-                        className=" border h-24 border-gray justify-center items-center rounded-lg"
+                        className=" border h-20 border-gray justify-center items-center rounded-lg"
                     >
-                        <View className=" h-14 w-14 bg-primary100 rounded-full items-center justify-center my-1">
+                        <View className=" h-10 w-10 bg-primary100 rounded-full items-center justify-center my-1">
                             <Icons
                                 name="cash-outline"
-                                size={23}
+                                size={20}
                                 color="#160093"
                             />
                         </View>
@@ -132,7 +132,7 @@ const HomeScreen = () => {
                         </Text>
                     </View>
                 </View>
-                <View className="flex-row h-24 bg-primary100 mt-6 items-center rounded-lg">
+                <View className="flex-row h-24 bg-primary100 mt-4 items-center rounded-lg">
                     <View className="p-3">
                         <Image
                             className="h-16 w-16"
@@ -151,7 +151,7 @@ const HomeScreen = () => {
                         </Text>
                     </View>
                 </View>
-                <View className="flex-row justify-between mt-8 mb-2">
+                <View className="flex-row justify-between mt-4 mb-2">
                     <Text className="font-[clash-medium] text-md text-dark">
                         Recent Transactions
                     </Text>

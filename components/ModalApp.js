@@ -35,7 +35,7 @@ const ModalApp = ({ onPress }) => {
                 <Text className="font-[clash-medium] text-xs text-dark">
                     Bank
                 </Text>
-                <Text className="font-[clash] text-xs text-gray">Wu Bank</Text>
+                <Text className="font-[clash] text-xs text-gray">Wu-Tang Bank</Text>
             </View>
             <View className="flex-row justify-between mt-5">
                 <Text className="font-[clash-medium] text-xs text-dark">

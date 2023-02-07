@@ -38,7 +38,7 @@ const SignupScreen = ({ navigation }) => {
             <View className=" items-center mt-5">
                 <Btn
                     title="Sign Up"
-                    onPress={() => navigation.replace('Home')}
+                    onPress={() => navigation.replace('HomeTab')}
                 />
             </View>
             <View className="items-center mt-10">

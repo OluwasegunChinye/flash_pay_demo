@@ -13,6 +13,7 @@ import {
     OnboardingScreen,
     SignupScreen,
 } from './screens/index';
+import BottomTabs from './components/BottomTabs';
 
 export default function App() {
     SplashScreen.preventAutoHideAsync();
@@ -47,7 +48,7 @@ export default function App() {
 
                         <Stack.Screen name="Signup" component={SignupScreen} />
                         <Stack.Screen name="Login" component={LoginScreen} />
-                        <Stack.Screen name="Home" component={HomeScreen} />
+                        <Stack.Screen name="HomeTab" component={BottomTabs} />
                     </Stack.Navigator>
                 </NavigationContainer>
             </TailwindProvider>
