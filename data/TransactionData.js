@@ -15,7 +15,7 @@ export const DATA = [
   },
   {
     id: '3',
-    name : 'Inpectah Deck',
+    name : 'SegunChinye',
     date: '22-01-2023',
     amount: '+N10,000',
     status: 'success'
@@ -30,6 +30,20 @@ export const DATA = [
   {
     id: '5',
     name : 'Capadona',
+    date: '22-01-2023',
+    amount: '+N35,000',
+    status: 'success'
+  },
+  {
+    id: '6',
+    name : 'Inspectah Deck',
+    date: '22-01-2023',
+    amount: '+N35,000',
+    status: 'success'
+  },
+  {
+    id: '7',
+    name : 'Chinye',
     date: '22-01-2023',
     amount: '+N35,000',
     status: 'success'

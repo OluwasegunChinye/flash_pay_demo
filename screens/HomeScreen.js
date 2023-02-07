@@ -73,7 +73,7 @@ const HomeScreen = () => {
                 <View className="flex-row mt-3 space-x-2">
                     <View
                         style={{ width: width / 5 }}
-                        className=" border border-dashed h-20 border-primary300 justify-center items-center rounded-lg"
+                        className="h-20 border-primary300 justify-center items-center rounded-lg"
                     >
                         <View className=" h-10 w-10 bg-primary100 rounded-full items-center justify-center my-1">
                             <Icons
@@ -88,7 +88,7 @@ const HomeScreen = () => {
                     </View>
                     <View
                         style={{ width: width / 5 }}
-                        className=" border h-20 border-gray justify-center items-center rounded-lg"
+                        className=" h-20 border-gray justify-center items-center rounded-lg"
                     >
                         <View className=" h-10 w-10 bg-primary100 rounded-full items-center justify-center my-1">
                             <Icons
@@ -103,7 +103,7 @@ const HomeScreen = () => {
                     </View>
                     <View
                         style={{ width: width / 5 }}
-                        className=" border h-20 border-gray justify-center items-center rounded-lg"
+                        className=" h-20 border-gray justify-center items-center rounded-lg"
                     >
                         <View className=" h-10 w-10 bg-primary100 rounded-full items-center justify-center my-1">
                             <Icons
@@ -118,7 +118,7 @@ const HomeScreen = () => {
                     </View>
                     <View
                         style={{ width: width / 5 }}
-                        className=" border h-20 border-gray justify-center items-center rounded-lg"
+                        className="h-20 border-gray justify-center items-center rounded-lg"
                     >
                         <View className=" h-10 w-10 bg-primary100 rounded-full items-center justify-center my-1">
                             <Icons
