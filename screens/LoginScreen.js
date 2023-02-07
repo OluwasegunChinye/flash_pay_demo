@@ -37,7 +37,10 @@ const LoginScreen = ({ navigation }) => {
                 </View>
             </View>
             <View className=" items-center mt-5">
-                <Btn title="Login" onPress={() => navigation.replace('Home')} />
+                <Btn
+                    title="Login"
+                    onPress={() => navigation.replace('HomeTab')}
+                />
             </View>
 
             <View className="mt-6 ml-10">
@@ -48,7 +51,9 @@ const LoginScreen = ({ navigation }) => {
                     <Text className="font-[clash] text-dark">
                         Dont have an account?
                     </Text>
-                    <TouchableOpacity>
+                    <TouchableOpacity
+                        onPress={() => navigation.replace('Signup')}
+                    >
                         <Text className="font-[clash] text-primary300 ml-2">
                             Sign Up
                         </Text>
