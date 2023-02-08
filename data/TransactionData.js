@@ -1,14 +1,14 @@
 export const DATA = [
   {
     id: '1',
-    name : 'RZA',
+    name : 'Luke Skywalker',
     date: '22-01-2023',
     amount: '+N20,000',
     status: 'success'
   },
   {
     id: '2',
-    name : 'Reakwon',
+    name : 'Han Solo',
     date: '22-01-2023',
     amount: '+N40,000',
     status: 'success'
@@ -22,21 +22,21 @@ export const DATA = [
   },
   {
     id: '4',
-    name : 'GZA',
+    name : 'Yoda',
     date: '22-01-2023',
     amount: '+N70,000',
     status: 'success'
   },
   {
     id: '5',
-    name : 'Capadona',
+    name : 'Chewbecca',
     date: '22-01-2023',
     amount: '+N35,000',
     status: 'success'
   },
   {
     id: '6',
-    name : 'Inspectah Deck',
+    name : 'Boba Fett',
     date: '22-01-2023',
     amount: '+N35,000',
     status: 'success'

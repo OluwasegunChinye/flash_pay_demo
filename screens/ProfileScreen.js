@@ -65,10 +65,10 @@ const ProfileScreen = ({ navigation }) => {
                     <Image
                         resizeMode="cover"
                         className="h-32 w-32 rounded-full"
-                        source={require('../assets/images/img6.jpeg')}
+                        source={require('../assets/images/darth.jpeg')}
                     />
                     <Text className="font-[clash-medium] text-dark text-lg">
-                        Sir Nobody
+                        Mr Darth V
                     </Text>
                 </View>
 
