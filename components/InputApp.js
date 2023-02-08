@@ -1,7 +1,7 @@
 import { View, Text, TextInput } from 'react-native';
 import React from 'react';
 
-const InputApp = ({ placeholder, value, onChangeText, keyboardType }) => {
+const InputApp = ({ placeholder, value, onChangeText, keyboardType, onBlur, autoCapitalize, secureTextEntry }) => {
     return (
         <View>
             <TextInput
@@ -10,6 +10,9 @@ const InputApp = ({ placeholder, value, onChangeText, keyboardType }) => {
                 onChangeText={onChangeText}
                 value={value}
                 keyboardType={keyboardType}
+                onBlur={onBlur}
+                autoCapitalize={autoCapitalize}
+                secureTextEntry={secureTextEntry}
             />
         </View>
     );

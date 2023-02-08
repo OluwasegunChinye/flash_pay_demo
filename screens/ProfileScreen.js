@@ -84,7 +84,7 @@ const ProfileScreen = ({ navigation }) => {
                     )}
                 />
                 <View className="flex-row mt-10 items-center ml-2">
-                    <Icons name="log-out-outline" size={25} color="#f80202" />
+                    <Icons name="log-out-outline" size={25} color="#f80202" onPress={() => navigation.navigate('Login')} />
                     <Text className='font-[clash] text-danger text-lg ml-3'>Logout</Text>
                 </View>
             </View>
