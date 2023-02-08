@@ -134,7 +134,6 @@ const SignupScreen = ({ navigation }) => {
                         <Btn
                             title="Sign Up"
                             onPress={() => navigation.replace('HomeTab')}
-                            
                         />
                     </View>
 
