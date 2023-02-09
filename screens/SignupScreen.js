@@ -1,11 +1,18 @@
-import { View, Text, SafeAreaView, Dimensions } from 'react-native';
-import React from 'react';
+import {
+    View,
+    Text,
+    SafeAreaView,
+    Dimensions,
+    ActivityIndicator,
+} from 'react-native';
+import React, { useState } from 'react';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 
 import InputApp from '../components/InputApp';
 import Btn from '../components/Btn';
 import Icons from '../components/Icons';
+import Anime from '../components/Anime';
 
 const { height, width } = Dimensions.get('screen');
 
@@ -35,6 +42,16 @@ const SignupSchema = Yup.object().shape({
 });
 
 const SignupScreen = ({ navigation }) => {
+    const [loading, setLoading] = useState(false);
+
+    const startLoading = () => {
+        setLoading(true);
+        setTimeout(() => {
+            setLoading(false);
+            navigation.replace('HomeTab');
+        }, 3000);
+    };
+
     return (
         <Formik
             initialValues={{
@@ -51,100 +68,127 @@ const SignupScreen = ({ navigation }) => {
                 touched,
                 handleChange,
                 setFieldTouched,
-                isValid,
                 handleSubmit,
             }) => (
                 <SafeAreaView className="flex-1  bg-white">
-                    <View style={{ margin: width * 0.08 }}>
-                        <View className="mt-20">
-                            <Text className="font-[clash-medium] text-xl mb-2 text-dark">
-                                Sign Up
-                            </Text>
-                            <Text className="font-[clash] text-dark">
-                                Sign up to your account and enjoy the best{' '}
-                            </Text>
-                            <Text className="font-[clash] text-dark">
-                                banking experience
-                            </Text>
-                        </View>
-
-                        <View className="mt-8">
-                            <InputApp
-                                placeholder="User ID"
-                                value={values.userId}
-                                onChangeText={handleChange('userId')}
-                                onBlur={() => setFieldTouched('userId')}
+                    {loading ? (
+                        // <ActivityIndicator
+                        //     className="flex-1 justify-center items-center"
+                        //     //visibility of Overlay Loading Spinner
+                        //     visible={loading}
+                        //     //Text with the Spinner
+                        //     textContent={'Loading...'}
+                        //     //Text style of the Spinner Text
+                        //     size="large"
+                        //     color="#00ff00"
+                        // />
+                        <View className="flex-1 justify-center items-center">
+                            <Anime 
+                                source={require('../assets/loading.json')}
                             />
-                            {touched.userId && errors.userId && (
-                                <Text className="font-[clash] text-xs text-danger">
-                                    {errors.userId}
-                                </Text>
-                            )}
                         </View>
-                        <View className="mt-8">
-                            <InputApp
-                                placeholder="Account Number"
-                                keyboardType="phone-pad"
-                                value={values.account}
-                                onChangeText={handleChange('account')}
-                                onBlur={() => setFieldTouched('account')}
-                            />
-                            {touched.account && errors.account && (
-                                <Text className="font-[clash] text-xs text-danger">
-                                    {errors.account}
-                                </Text>
-                            )}
-                        </View>
-                        <View className="mt-8">
-                            <InputApp
-                                placeholder="Password"
-                                secureTextEntry
-                                autoCapitalize={false}
-                                onBlur={() => setFieldTouched('password')}
-                                value={values.password}
-                                onChangeText={handleChange('password')}
-                            />
-                            {touched.password && errors.password && (
-                                <Text className="font-[clash] text-xs text-danger">
-                                    {errors.password}
-                                </Text>
-                            )}
-                        </View>
-                        <View className="mt-8">
-                            <InputApp
-                                placeholder="Confirm Password"
-                                autoCapitalize={false}
-                                secureTextEntry
-                                value={values.confirmPassword}
-                                onChangeText={handleChange('confirmPassword')}
-                                onBlur={() =>
-                                    setFieldTouched('confirmPassword')
-                                }
-                            />
-                            {touched.confirmPassword &&
-                                errors.confirmPassword && (
-                                    <Text className="font-[clash] text-xs text-danger">
-                                        {errors.confirmPassword}
+                    ) : (
+                        <>
+                            <View style={{ margin: width * 0.08 }}>
+                                <View className="mt-20">
+                                    <Text className="font-[clash-medium] text-xl mb-2 text-dark">
+                                        Sign Up
                                     </Text>
-                                )}
-                        </View>
-                    </View>
+                                    <Text className="font-[clash] text-dark">
+                                        Sign up to your account and enjoy the
+                                        best{' '}
+                                    </Text>
+                                    <Text className="font-[clash] text-dark">
+                                        banking experience
+                                    </Text>
+                                </View>
 
-                    <View className=" items-center mt-5">
-                        <Btn
-                            title="Sign Up"
-                            onPress={() => navigation.replace('HomeTab')}
-                        />
-                    </View>
+                                <View className="mt-8">
+                                    <InputApp
+                                        placeholder="User ID"
+                                        value={values.userId}
+                                        onChangeText={handleChange('userId')}
+                                        onBlur={() => setFieldTouched('userId')}
+                                    />
+                                    {touched.userId && errors.userId && (
+                                        <Text className="font-[clash] text-xs text-danger">
+                                            {errors.userId}
+                                        </Text>
+                                    )}
+                                </View>
+                                <View className="mt-8">
+                                    <InputApp
+                                        placeholder="Account Number"
+                                        keyboardType="phone-pad"
+                                        value={values.account}
+                                        onChangeText={handleChange('account')}
+                                        onBlur={() =>
+                                            setFieldTouched('account')
+                                        }
+                                    />
+                                    {touched.account && errors.account && (
+                                        <Text className="font-[clash] text-xs text-danger">
+                                            {errors.account}
+                                        </Text>
+                                    )}
+                                </View>
+                                <View className="mt-8">
+                                    <InputApp
+                                        placeholder="Password"
+                                        secureTextEntry
+                                        autoCapitalize={false}
+                                        onBlur={() =>
+                                            setFieldTouched('password')
+                                        }
+                                        value={values.password}
+                                        onChangeText={handleChange('password')}
+                                    />
+                                    {touched.password && errors.password && (
+                                        <Text className="font-[clash] text-xs text-danger">
+                                            {errors.password}
+                                        </Text>
+                                    )}
+                                </View>
+                                <View className="mt-8">
+                                    <InputApp
+                                        placeholder="Confirm Password"
+                                        autoCapitalize={false}
+                                        secureTextEntry
+                                        value={values.confirmPassword}
+                                        onChangeText={handleChange(
+                                            'confirmPassword'
+                                        )}
+                                        onBlur={() =>
+                                            setFieldTouched('confirmPassword')
+                                        }
+                                    />
+                                    {touched.confirmPassword &&
+                                        errors.confirmPassword && (
+                                            <Text className="font-[clash] text-xs text-danger">
+                                                {errors.confirmPassword}
+                                            </Text>
+                                        )}
+                                </View>
+                            </View>
 
-                    <View className="items-center mt-10">
-                        <Icons name="finger-print" color="#160093" size={100} />
-                    </View>
-                    <View className="items-center">
-                        <Text className="text-[clash] text-dark mt-10">
-                            Add Fingerprint
-                        </Text>
-                    </View>
+                            <View className=" items-center mt-5">
+                                <Btn title="Sign Up" onPress={startLoading} />
+                            </View>
+
+                            <View className="items-center mt-10">
+                                <Icons
+                                    name="finger-print"
+                                    color="#160093"
+                                    size={100}
+                                />
+                            </View>
+                            <View className="items-center">
+                                <Text className="text-[clash] text-dark mt-10">
+                                    Add Fingerprint
+                                </Text>
+                            </View>
+                        </>
+                    )}
                 </SafeAreaView>
             )}
         </Formik>

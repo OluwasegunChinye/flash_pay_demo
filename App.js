@@ -39,6 +39,13 @@ export default function App() {
         return null;
     }
 
+    const startLoading = () => {
+        setLoading(true);
+        setTimeout(() => {
+            setLoading(false);
+        }, 3000);
+    };
+
     return (
         <View className=" flex-1" onLayout={onLayoutRootView}>
             <TailwindProvider>
@@ -52,9 +59,15 @@ export default function App() {
                         <Stack.Screen name="Signup" component={SignupScreen} />
                         <Stack.Screen name="Login" component={LoginScreen} />
                         <Stack.Screen name="HomeTab" component={BottomTabs} />
-                        <Stack.Screen name="Transaction" component={TransactionScreen} />
+                        <Stack.Screen
+                            name="Transaction"
+                            component={TransactionScreen}
+                        />
                         <Stack.Screen name="Card" component={CardScreen} />
-                        <Stack.Screen name="Profile" component={ProfileScreen} />
+                        <Stack.Screen
+                            name="Profile"
+                            component={ProfileScreen}
+                        />
                     </Stack.Navigator>
                 </NavigationContainer>
             </TailwindProvider>
