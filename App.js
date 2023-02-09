@@ -23,7 +23,7 @@ export default function App() {
     const Stack = createNativeStackNavigator();
 
     const [fontsLoaded] = useFonts({
-        clash: require('./assets/fonts/ClashGrotesk-Regular.otf'),
+        'clash': require('./assets/fonts/ClashGrotesk-Regular.otf'),
         'clash-medium': require('./assets/fonts/ClashGrotesk-Medium.otf'),
         'clash-semibold': require('./assets/fonts/ClashGrotesk-Semibold.otf'),
         'clash-bold': require('./assets/fonts/ClashGrotesk-Bold.otf'),
