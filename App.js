@@ -1,6 +1,6 @@
-import { StatusBar } from 'expo-status-bar';
+
 import { useCallback } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { View } from 'react-native';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { TailwindProvider } from 'tailwindcss-react-native';

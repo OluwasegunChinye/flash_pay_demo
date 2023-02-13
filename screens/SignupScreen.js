@@ -83,9 +83,7 @@ const SignupScreen = ({ navigation }) => {
                         //     color="#00ff00"
                         // />
                         <View className="flex-1 justify-center items-center">
-                            <Anime 
-                                source={require('../assets/loading.json')}
-                            />
+                            <Anime source={require('../assets/loading.json')} />
                         </View>
                     ) : (
                         <>
