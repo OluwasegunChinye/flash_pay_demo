@@ -44,7 +44,7 @@ const HomeScreen = () => {
                         </Text>
                     </View>
                     <View>
-                        <View className="h-10 w-10 bg-primary100 justify-center items-center rounded-md">
+                        <View className="h-10 w-10 bg-[#EEF6FC] justify-center items-center rounded-md">
                             <Icons
                                 name="notifications-outline"
                                 size={25}
@@ -75,7 +75,7 @@ const HomeScreen = () => {
                         style={{ width: width / 5 }}
                         className="h-20 border-primary300 justify-center items-center rounded-lg"
                     >
-                        <View className=" h-10 w-10 bg-primary100 rounded-full items-center justify-center my-1">
+                        <View className=" h-10 w-10 bg-[#EEF6FC] rounded-full items-center justify-center my-1">
                             <Icons
                                 name="ios-paper-plane"
                                 size={20}
@@ -90,7 +90,7 @@ const HomeScreen = () => {
                         style={{ width: width / 5 }}
                         className=" h-20 border-gray justify-center items-center rounded-lg"
                     >
-                        <View className=" h-10 w-10 bg-primary100 rounded-full items-center justify-center my-1">
+                        <View className=" h-10 w-10 bg-[#EEF6FC] rounded-full items-center justify-center my-1">
                             <Icons
                                 name="ios-receipt-outline"
                                 size={20}
@@ -105,7 +105,7 @@ const HomeScreen = () => {
                         style={{ width: width / 5 }}
                         className=" h-20 border-gray justify-center items-center rounded-lg"
                     >
-                        <View className=" h-10 w-10 bg-primary100 rounded-full items-center justify-center my-1">
+                        <View className=" h-10 w-10 bg-[#EEF6FC] rounded-full items-center justify-center my-1">
                             <Icons
                                 name="phone-portrait-outline"
                                 size={20}
@@ -120,7 +120,7 @@ const HomeScreen = () => {
                         style={{ width: width / 5 }}
                         className="h-20 border-gray justify-center items-center rounded-lg"
                     >
-                        <View className=" h-10 w-10 bg-primary100 rounded-full items-center justify-center my-1">
+                        <View className=" h-10 w-10 bg-[#EEF6FC] rounded-full items-center justify-center my-1">
                             <Icons
                                 name="cash-outline"
                                 size={20}
@@ -132,7 +132,7 @@ const HomeScreen = () => {
                         </Text>
                     </View>
                 </View>
-                <View className="flex-row h-24 bg-primary100 mt-4 items-center rounded-lg">
+                <View className="flex-row h-24 bg-[#EEF6FC] mt-4 items-center rounded-lg">
                     <View className="p-3">
                         <Image
                             className="h-16 w-16"

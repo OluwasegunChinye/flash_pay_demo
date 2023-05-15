@@ -31,8 +31,8 @@ const TransactionScreen = ({ navigation }) => {
                     <ModalApp onPress={toggleModal} />
                 </Modal>
             </View>
-            <View style={{ margin: width * 0.08 }} className='flex-1'>
-                <TouchableOpacity className="h-8 w-8 rounded-md bg-primary100 justify-center items-center">
+            <View style={{ margin: width * 0.08 }} className="flex-1">
+                <TouchableOpacity className="h-8 w-8 rounded-md bg-[#EEF6FC] justify-center items-center">
                     <Icons
                         name="chevron-back"
                         size={20}
@@ -40,7 +40,7 @@ const TransactionScreen = ({ navigation }) => {
                         onPress={() => navigation.goBack()}
                     />
                 </TouchableOpacity>
-                <Text className="mt-6 font-[clash-medium] text-lg mb-6" >
+                <Text className="mt-6 font-[clash-medium] text-lg mb-6">
                     Transaction History
                 </Text>
 

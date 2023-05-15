@@ -8,7 +8,7 @@ const CardScreen = ({navigation}) => {
     return (
         <SafeAreaView className="flex-1 bg-white">
             <View style={{ margin: width * 0.08 }}>
-                <TouchableOpacity className="h-8 w-8 rounded-md bg-primary100 justify-center items-center">
+                <TouchableOpacity className="h-8 w-8 rounded-md bg-[#EEF6FC] justify-center items-center">
                     <Icons
                         name="chevron-back"
                         size={20}

@@ -50,7 +50,7 @@ const ProfileScreen = ({ navigation }) => {
     return (
         <SafeAreaView className="flex-1 bg-white">
             <View style={{ margin: width * 0.08 }}>
-                <TouchableOpacity className="h-8 w-8 rounded-md bg-primary100 justify-center items-center">
+                <TouchableOpacity className="h-8 w-8 rounded-md bg-[#EEF6FC] justify-center items-center">
                     <Icons
                         name="chevron-back"
                         size={20}
@@ -84,8 +84,15 @@ const ProfileScreen = ({ navigation }) => {
                     )}
                 />
                 <View className="flex-row mt-10 items-center ml-2">
-                    <Icons name="log-out-outline" size={25} color="#f80202" onPress={() => navigation.navigate('Login')} />
-                    <Text className='font-[clash] text-danger text-lg ml-3'>Logout</Text>
+                    <Icons
+                        name="log-out-outline"
+                        size={25}
+                        color="#f80202"
+                        onPress={() => navigation.navigate('Login')}
+                    />
+                    <Text className="font-[clash] text-danger text-lg ml-3">
+                        Logout
+                    </Text>
                 </View>
             </View>
         </SafeAreaView>
