@@ -44,14 +44,6 @@ const SignupSchema = Yup.object().shape({
 const SignupScreen = ({ navigation }) => {
     const [loading, setLoading] = useState(false);
 
-    const startLoading = () => {
-        setLoading(true);
-        setTimeout(() => {
-            setLoading(false);
-            navigation.replace('HomeTab');
-        }, 3000);
-    };
-
     return (
         <Formik
             initialValues={{
@@ -61,6 +53,14 @@ const SignupScreen = ({ navigation }) => {
                 confirmPassword: '',
             }}
             validationSchema={SignupSchema}
+            onSubmit={(values) => {
+                setLoading(true);
+                setTimeout(() => {
+                    setLoading(false);
+                    navigation.replace('HomeTab');
+                }, 3000);
+                console.log(values);
+            }}
         >
             {({
                 values,
@@ -170,7 +170,7 @@ const SignupScreen = ({ navigation }) => {
                             </View>
 
                             <View className=" items-center mt-5">
-                                <Btn title="Sign Up" onPress={startLoading} />
+                                <Btn title="Sign Up" onPress={handleSubmit} />
                             </View>
 
                             <View className="items-center mt-10">
